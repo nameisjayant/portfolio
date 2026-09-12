@@ -21,46 +21,230 @@ export const profile = {
   },
 };
 
-export type Work = {
-  title: string;
-  category: string;
+export type Project = {
+  name: string;
   description: string;
-  tags: string[];
-  href: string;
+  tech?: string[];
+  playStoreUrl?: string;
+  appStoreUrl?: string;
 };
 
-export const works: Work[] = [
+export type Client = {
+  name: string;
+  tagline?: string;
+  logo?: string; // path under /public, e.g. "/logos/awfis.svg"
+  isOther?: boolean; // treat card as the "Other Projects" bucket
+  projects: Project[];
+};
+
+export const currentRole = {
+  company: "Antino Labs",
+  title: "Lead Mobile Engineer",
+  subtitle: "Associate Vice President",
+  period: "Current",
+  logo: "/logos/antino.png",
+  companyUrl: "https://antino.com",
+  summary:
+    "Leading mobile engineering across Android, iOS, React Native and Flutter for clients spanning workspace, EV, POS, mobility and news.",
+  highlights: [
+    "Android · iOS · React Native · Flutter",
+    "Team leadership & mentoring",
+    "0 → 1 product delivery",
+  ],
+};
+
+// Grouped by client, not employer.
+// Add real client logos to /public/logos/ and set the `logo` field to the path.
+// Fill in Play Store / App Store URLs on each project as you go.
+export const clients: Client[] = [
   {
-    title: "Compose Bootcamp — Material 3",
-    category: "Android · Jetpack Compose",
-    description:
-      "A hands-on Jetpack Compose playground covering Material 3 components, layouts, and animation patterns.",
-    tags: ["Kotlin", "Jetpack Compose", "Material 3"],
-    href: "https://github.com/nameisjayant",
+    name: "Awfis",
+    tagline: "India's largest workspace network — full mobile suite.",
+    projects: [
+      {
+        name: "Awfis App",
+        description: "Flagship Awfis workspace app for members.",
+        tech: ["React Native"],
+        playStoreUrl: "",
+        appStoreUrl: "",
+      },
+      {
+        name: "Awfis Meeting Room",
+        description: "Meeting-room discovery and booking experience.",
+        tech: ["React Native"],
+        playStoreUrl: "",
+        appStoreUrl: "",
+      },
+      {
+        name: "Awfis BPM",
+        description: "Business-process management for Awfis operations teams.",
+        tech: ["React Native"],
+        playStoreUrl: "",
+        appStoreUrl: "",
+      },
+      {
+        name: "Awfis VMS",
+        description: "Visitor-management system for Awfis centres.",
+        tech: ["React Native"],
+        playStoreUrl: "",
+        appStoreUrl: "",
+      },
+      {
+        name: "Awfis Care",
+        description: "Facility-care app for on-site issue reporting.",
+        tech: ["React Native"],
+        playStoreUrl: "",
+        appStoreUrl: "",
+      },
+      {
+        name: "Awfis POS",
+        description:
+          "Point-of-sale app for Awfis cafes and services — native Android.",
+        tech: ["Android", "Kotlin", "Jetpack Compose"],
+        playStoreUrl: "",
+        appStoreUrl: "",
+      },
+      {
+        name: "Awfis Cafe",
+        description: "Cafe ordering experience for Awfis members.",
+        tech: ["React Native"],
+        playStoreUrl: "",
+        appStoreUrl: "",
+      },
+      {
+        name: "Awfis Co-working",
+        description: "Co-working discovery and booking flows.",
+        tech: ["React Native"],
+        playStoreUrl: "",
+        appStoreUrl: "",
+      },
+      {
+        name: "Elevate",
+        description:
+          "Built for Awfis MO (Managed Office) clients — a dedicated experience for managed-office members.",
+        tech: ["React Native"],
+        playStoreUrl: "",
+        appStoreUrl: "",
+      },
+    ],
   },
   {
-    title: "React Native UI Kit",
-    category: "React Native",
-    description:
-      "Reusable, themeable components and screens for shipping React Native apps faster.",
-    tags: ["React Native", "TypeScript", "Reanimated"],
-    href: "https://github.com/nameisjayant",
+    name: "Queuebuster",
+    tagline: "POS suite for retailers — merchants, distributors and stores.",
+    projects: [
+      {
+        name: "Queuebuster",
+        description:
+          "The flagship POS app — manage stocks, khata and billing for small businesses.",
+        tech: ["Android", "Jetpack Compose"],
+        playStoreUrl: "",
+        appStoreUrl: "",
+      },
+      {
+        name: "Merchant App",
+        description:
+          "My first Flutter app — merchants can view product details and renew their license.",
+        tech: ["Flutter", "Dart"],
+        playStoreUrl: "",
+        appStoreUrl: "",
+      },
+      {
+        name: "Distributor App",
+        description:
+          "Distributors can create leads and view license details across the Queuebuster network.",
+        tech: ["Android", "Jetpack Compose"],
+        playStoreUrl: "",
+        appStoreUrl: "",
+      },
+    ],
   },
   {
-    title: "Flutter Commerce",
-    category: "Flutter",
-    description:
-      "A modern e-commerce experience in Flutter with Riverpod, animations, and clean architecture.",
-    tags: ["Flutter", "Dart", "Riverpod"],
-    href: "https://github.com/nameisjayant",
+    name: "Eneready",
+    tagline: "EV charging for Singapore.",
+    projects: [
+      {
+        name: "Eneready",
+        description:
+          "My first real-world Jetpack Compose app — Singapore-based EV charging for drivers on the go.",
+        tech: ["Android", "Jetpack Compose"],
+        playStoreUrl: "",
+        appStoreUrl: "",
+      },
+    ],
   },
   {
-    title: "SwiftUI Playground",
-    category: "iOS · SwiftUI",
-    description:
-      "Interactive SwiftUI experiments — gestures, transitions, and glassy interfaces on iOS 17+.",
-    tags: ["Swift", "SwiftUI", "iOS"],
-    href: "https://github.com/nameisjayant",
+    name: "Yassir",
+    tagline: "Super-app leader in North Africa.",
+    projects: [
+      {
+        name: "Yassir",
+        description:
+          "A cab-booking application based in Algeria, North Africa.",
+        tech: ["Mobile"],
+        playStoreUrl: "",
+        appStoreUrl: "",
+      },
+    ],
+  },
+  {
+    name: "GMR",
+    tagline: "The company behind Delhi Airport — green-energy mobility.",
+    projects: [
+      {
+        name: "GMR Green Energy EV",
+        description:
+          "Users can search for nearby EV charging stations. Built in Jetpack Compose with modern Android practices.",
+        tech: ["Android", "Jetpack Compose"],
+        playStoreUrl: "",
+        appStoreUrl: "",
+      },
+    ],
+  },
+  {
+    name: "Other Projects",
+    tagline: "Independent projects across news, social, government and jobs.",
+    isOther: true,
+    projects: [
+      {
+        name: "Opinito",
+        description:
+          "A news app where users can read, like and share the latest stories.",
+        tech: ["Android", "Jetpack Compose"],
+        playStoreUrl: "",
+        appStoreUrl: "",
+      },
+      {
+        name: "ASCO (Street Light)",
+        description:
+          "A Bihar government app to raise street-light requests across districts. Migrated the entire project to Jetpack Compose.",
+        tech: ["Android", "Jetpack Compose"],
+        playStoreUrl: "",
+        appStoreUrl: "",
+      },
+      {
+        name: "Torbit",
+        description: "A real-estate consultant app built with Flutter.",
+        tech: ["Flutter", "Dart"],
+        playStoreUrl: "",
+        appStoreUrl: "",
+      },
+      {
+        name: "Genuin",
+        description:
+          "A social app for short videos, communities, loops and stories — Instagram-style experience.",
+        tech: ["Android"],
+        playStoreUrl: "",
+        appStoreUrl: "",
+      },
+      {
+        name: "GetWork",
+        description:
+          "A job-search app across many fields, built in React Native.",
+        tech: ["React Native", "TypeScript"],
+        playStoreUrl: "",
+        appStoreUrl: "",
+      },
+    ],
   },
 ];
 
