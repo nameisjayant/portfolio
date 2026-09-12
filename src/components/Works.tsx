@@ -4,6 +4,7 @@ import {
   type Client,
   type Project,
 } from "@/lib/profile";
+import { asset } from "@/lib/path";
 import { ArrowUpRight } from "./Icons";
 import { AppStoreIcon, PlayStoreIcon } from "./StoreIcons";
 
@@ -52,7 +53,7 @@ function CurrentRoleBanner() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={currentRole.logo}
+            src={asset(currentRole.logo)}
             alt={`${currentRole.company} logo`}
             className="h-full w-full object-contain p-5"
           />
@@ -168,7 +169,7 @@ function ClientLogo({ client }: { client: Client }) {
       {client.logo ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
-          src={client.logo}
+          src={asset(client.logo)}
           alt={`${client.name} logo`}
           className="h-full w-full object-contain p-3"
         />

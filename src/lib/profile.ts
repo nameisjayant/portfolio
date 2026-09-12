@@ -14,9 +14,9 @@ export const profile = {
     youtube: "https://www.youtube.com/@ProgrammingSimplified0",
     instagram: "https://www.instagram.com/programming_simplified",
     medium: [
-      { label: "Main", href: "https://nameisjayant.medium.com/" },
-      { label: "Kotlin & Compose", href: "https://medium.com/@nameisjayant1" },
-      { label: "Cross-platform", href: "https://medium.com/@nameisjayant2" },
+      { label: "Android & Compose", href: "https://nameisjayant.medium.com/" },
+      { label: "React Native", href: "https://medium.com/@nameisjayant1" },
+      { label: "iOS, Swift & SwiftUI", href: "https://medium.com/@nameisjayant2" },
     ],
   },
 };
