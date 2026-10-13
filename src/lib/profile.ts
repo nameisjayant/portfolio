@@ -57,12 +57,13 @@ export const currentRole = {
 };
 
 // Grouped by client, not employer.
-// Add real client logos to /public/logos/ and set the `logo` field to the path.
+// Client logos live in /public/logos/; clients with a `logo` also appear in the Clients section.
 // Fill in Play Store / App Store URLs on each project as you go.
 export const clients: Client[] = [
   {
     name: "Awfis",
     tagline: "India's largest workspace network — full mobile suite.",
+    logo: "/logos/awfis.png",
     projects: [
       {
         name: "Awfis App",
@@ -136,6 +137,7 @@ export const clients: Client[] = [
   {
     name: "Queuebuster",
     tagline: "POS suite for retailers — merchants, distributors and stores.",
+    logo: "/logos/queuebuster.png",
     projects: [
       {
         name: "Queuebuster",
@@ -167,6 +169,7 @@ export const clients: Client[] = [
   {
     name: "Eneready",
     tagline: "EV charging for Singapore.",
+    logo: "/logos/eneready.png",
     projects: [
       {
         name: "Eneready",
@@ -182,6 +185,7 @@ export const clients: Client[] = [
   {
     name: "Yassir",
     tagline: "Super-app leader in North Africa.",
+    logo: "/logos/yassir.jpg",
     projects: [
       {
         name: "Yassir",
@@ -197,6 +201,7 @@ export const clients: Client[] = [
   {
     name: "GMR",
     tagline: "The company behind Delhi Airport — green-energy mobility.",
+    logo: "/logos/gmr.svg",
     projects: [
       {
         name: "GMR Green Energy EV",

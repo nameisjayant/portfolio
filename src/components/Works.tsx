@@ -114,10 +114,15 @@ function CurrentRoleBanner() {
   );
 }
 
+export function clientAnchor(name: string) {
+  return `client-${name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+}
+
 function ClientCard({ client }: { client: Client }) {
   return (
     <article
-      className={`rounded-3xl border overflow-hidden ${
+      id={clientAnchor(client.name)}
+      className={`scroll-mt-24 rounded-3xl border overflow-hidden ${
         client.isOther
           ? "border-ink/15 bg-cream-soft"
           : "border-ink/10 bg-cream-soft"
@@ -165,7 +170,11 @@ function ClientLogo({ client }: { client: Client }) {
         .toUpperCase();
 
   return (
-    <div className="relative h-20 w-20 shrink-0 rounded-2xl border border-ink/10 bg-cream flex items-center justify-center overflow-hidden">
+    <div
+      className={`relative h-20 w-20 shrink-0 rounded-2xl border border-ink/10 ${
+        client.logo ? "bg-white" : "bg-cream"
+      } flex items-center justify-center overflow-hidden`}
+    >
       {client.logo ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img

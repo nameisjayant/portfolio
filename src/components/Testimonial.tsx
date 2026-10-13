@@ -23,7 +23,7 @@ export default function Testimonial() {
         />
 
         <div className="mt-14 grid grid-cols-1 lg:grid-cols-5 gap-8 items-stretch">
-          <div className="lg:col-span-3 rounded-3xl bg-ink text-cream p-10 md:p-14 relative overflow-hidden">
+          <div className="surface-inverse lg:col-span-3 rounded-3xl bg-ink text-cream p-10 md:p-14 relative overflow-hidden">
             <span className="font-serif text-[10rem] leading-none absolute -top-6 left-6 text-cream/10 select-none">
               &ldquo;
             </span>

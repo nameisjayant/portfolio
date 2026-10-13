@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import ThemeToggle from "./ThemeToggle";
 
 const links = [
   { href: "#home", label: "Home" },
+  { href: "#clients", label: "Clients" },
   { href: "#works", label: "Works" },
   { href: "#about", label: "About" },
   { href: "#services", label: "Services" },
@@ -30,7 +32,7 @@ export default function Navbar() {
       <div
         className={`mx-auto flex max-w-7xl items-center justify-between px-5 md:px-8 transition-all ${
           scrolled
-            ? "bg-cream/85 backdrop-blur-md rounded-full shadow-[0_4px_30px_rgba(0,0,0,0.06)] mx-4 md:mx-8"
+            ? "bg-cream/85 backdrop-blur-md rounded-full shadow-[0_4px_30px_rgba(0,0,0,0.06)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.5)] mx-4 md:mx-8"
             : ""
         }`}
       >
@@ -54,6 +56,7 @@ export default function Navbar() {
         </nav>
 
         <div className="flex items-center gap-3">
+          <ThemeToggle />
           <a
             href="#contact"
             className="hidden md:inline-flex items-center rounded-full bg-ink text-cream px-6 py-3 text-sm font-medium hover:bg-accent transition-colors"

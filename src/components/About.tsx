@@ -2,7 +2,7 @@ import { SectionHeader } from "./Works";
 
 const stats = [
   { value: "5+", label: "Years shipping mobile apps" },
-  { value: "40+", label: "Articles on Medium" },
+  { value: "300+", label: "Articles on Medium" },
   { value: "10k+", label: "Developers reached on YouTube" },
   { value: "4", label: "Platforms mastered" },
 ];
@@ -62,7 +62,7 @@ export default function About() {
             </p>
           </div>
 
-          <div className="rounded-3xl bg-ink text-cream p-8">
+          <div className="surface-inverse rounded-3xl bg-ink text-cream p-8">
             <p className="text-xs uppercase tracking-widest text-cream/60">
               At a glance
             </p>
@@ -87,7 +87,7 @@ export default function About() {
             {stack.map((s) => (
               <span
                 key={s}
-                className="inline-flex items-center rounded-full border border-ink/20 bg-cream px-4 py-2 text-sm font-medium text-ink/80 hover:border-ink hover:bg-white transition-colors"
+                className="inline-flex items-center rounded-full border border-ink/20 bg-cream px-4 py-2 text-sm font-medium text-ink/80 hover:border-ink hover:bg-surface transition-colors"
               >
                 {s}
               </span>

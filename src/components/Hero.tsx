@@ -17,7 +17,7 @@ export default function Hero() {
         {/* Availability + tagline row */}
         <div className="mt-16 md:mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 items-end">
           <div className="flex md:justify-start">
-            <div className="inline-flex items-center gap-3 rounded-full bg-white/90 backdrop-blur px-5 py-3 shadow-sm">
+            <div className="inline-flex items-center gap-3 rounded-full bg-surface/90 backdrop-blur px-5 py-3 shadow-sm">
               <span className="relative inline-flex h-2.5 w-2.5">
                 <span className="absolute inset-0 rounded-full bg-accent pulse-dot" />
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-accent" />

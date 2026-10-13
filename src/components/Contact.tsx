@@ -29,7 +29,7 @@ const socialLinks = [
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative py-24 md:py-32 bg-ink text-cream">
+    <section id="contact" className="surface-inverse relative py-24 md:py-32 bg-ink text-cream">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-end">
           <div className="md:col-span-2">
