@@ -6,7 +6,7 @@ export const profile = {
   tagline:
     "Specialized in Android, iOS, React Native and Flutter — building crafted, production-grade mobile experiences.",
   location: "India",
-  email: "nameisjayant1@gmail.com",
+  email: "nameisjayant@gmail.com",
   socials: {
     github: "https://github.com/nameisjayant",
     linkedin:
@@ -16,7 +16,10 @@ export const profile = {
     medium: [
       { label: "Android & Compose", href: "https://nameisjayant.medium.com/" },
       { label: "React Native", href: "https://medium.com/@nameisjayant1" },
-      { label: "iOS, Swift & SwiftUI", href: "https://medium.com/@nameisjayant2" },
+      {
+        label: "iOS, Swift & SwiftUI",
+        href: "https://medium.com/@nameisjayant2",
+      },
     ],
   },
 };
@@ -65,21 +68,25 @@ export const clients: Client[] = [
         name: "Awfis App",
         description: "Flagship Awfis workspace app for members.",
         tech: ["React Native"],
-        playStoreUrl: "",
-        appStoreUrl: "",
+        playStoreUrl:
+          "https://play.google.com/store/search?q=awfis&c=apps&hl=en_IN",
+        appStoreUrl:
+          "https://apps.apple.com/us/app/awfis-coworking/id1027252650",
       },
       {
         name: "Awfis Meeting Room",
         description: "Meeting-room discovery and booking experience.",
         tech: ["React Native"],
-        playStoreUrl: "",
+        playStoreUrl:
+          "https://play.google.com/store/apps/details?id=com.awfis.meetingroom&hl=en_IN",
         appStoreUrl: "",
       },
       {
         name: "Awfis BPM",
         description: "Business-process management for Awfis operations teams.",
         tech: ["React Native"],
-        playStoreUrl: "",
+        playStoreUrl:
+          "https://play.google.com/store/apps/details?id=com.myawfis.awfis&hl=en_IN",
         appStoreUrl: "",
       },
       {
@@ -93,29 +100,25 @@ export const clients: Client[] = [
         name: "Awfis Care",
         description: "Facility-care app for on-site issue reporting.",
         tech: ["React Native"],
-        playStoreUrl: "",
-        appStoreUrl: "",
+        playStoreUrl:
+          "https://play.google.com/store/apps/details?id=com.awfiscare&hl=en_IN",
+        appStoreUrl: "https://apps.apple.com/us/app/awfis-care/id1490094100",
       },
       {
         name: "Awfis POS",
         description:
           "Point-of-sale app for Awfis cafes and services — native Android.",
         tech: ["Android", "Kotlin", "Jetpack Compose"],
-        playStoreUrl: "",
+        playStoreUrl:
+          "https://play.google.com/store/apps/details?id=com.awfis.newpos&hl=en_IN",
         appStoreUrl: "",
       },
       {
         name: "Awfis Cafe",
         description: "Cafe ordering experience for Awfis members.",
         tech: ["React Native"],
-        playStoreUrl: "",
-        appStoreUrl: "",
-      },
-      {
-        name: "Awfis Co-working",
-        description: "Co-working discovery and booking flows.",
-        tech: ["React Native"],
-        playStoreUrl: "",
+        playStoreUrl:
+          "https://play.google.com/store/apps/details?id=com.awfis.newpos&hl=en_IN",
         appStoreUrl: "",
       },
       {
@@ -123,8 +126,10 @@ export const clients: Client[] = [
         description:
           "Built for Awfis MO (Managed Office) clients — a dedicated experience for managed-office members.",
         tech: ["React Native"],
-        playStoreUrl: "",
-        appStoreUrl: "",
+        playStoreUrl:
+          "https://play.google.com/store/apps/details?id=com.moawfis&hl=en_IN",
+        appStoreUrl:
+          "https://apps.apple.com/us/app/elevate-powered-by-awfis/id6762798472",
       },
     ],
   },
@@ -137,7 +142,8 @@ export const clients: Client[] = [
         description:
           "The flagship POS app — manage stocks, khata and billing for small businesses.",
         tech: ["Android", "Jetpack Compose"],
-        playStoreUrl: "",
+        playStoreUrl:
+          "https://play.google.com/store/search?q=queuebuster&c=apps&hl=en_IN",
         appStoreUrl: "",
       },
       {
@@ -167,8 +173,9 @@ export const clients: Client[] = [
         description:
           "My first real-world Jetpack Compose app — Singapore-based EV charging for drivers on the go.",
         tech: ["Android", "Jetpack Compose"],
-        playStoreUrl: "",
-        appStoreUrl: "",
+        playStoreUrl:
+          "https://play.google.com/store/apps/details?id=com.eneready.ener&hl=en_IN",
+        appStoreUrl: "https://apps.apple.com/us/app/eneready/id1612599603",
       },
     ],
   },
@@ -181,7 +188,8 @@ export const clients: Client[] = [
         description:
           "A cab-booking application based in Algeria, North Africa.",
         tech: ["Mobile"],
-        playStoreUrl: "",
+        playStoreUrl:
+          "https://play.google.com/store/apps/details?id=com.yatechnologies.yassir_driver&hl=en_IN",
         appStoreUrl: "",
       },
     ],
@@ -210,7 +218,8 @@ export const clients: Client[] = [
         description:
           "A news app where users can read, like and share the latest stories.",
         tech: ["Android", "Jetpack Compose"],
-        playStoreUrl: "",
+        playStoreUrl:
+          "https://play.google.com/store/apps/details?id=com.opinito.social&hl=en_IN",
         appStoreUrl: "",
       },
       {
@@ -233,7 +242,8 @@ export const clients: Client[] = [
         description:
           "A social app for short videos, communities, loops and stories — Instagram-style experience.",
         tech: ["Android"],
-        playStoreUrl: "",
+        playStoreUrl:
+          "https://play.google.com/store/apps/details?id=com.begenuin.begenuin&hl=en_IN",
         appStoreUrl: "",
       },
       {
@@ -279,8 +289,7 @@ export const services: Service[] = [
   },
   {
     title: "React Native",
-    description:
-      "Cross-platform apps that feel native, powered by TypeScript.",
+    description: "Cross-platform apps that feel native, powered by TypeScript.",
     bullets: [
       "Expo · Bare workflow",
       "Reanimated · Gesture Handler",
