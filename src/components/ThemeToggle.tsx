@@ -50,7 +50,7 @@ export default function ThemeToggle({ className = "" }: { className?: string }) 
       onClick={toggle}
       aria-label="Toggle dark mode"
       title="Toggle dark mode"
-      className={`inline-flex h-11 w-11 items-center justify-center rounded-full border border-ink/15 text-ink hover:border-ink transition-colors ${className}`}
+      className={`round ${className}`}
     >
       {/* Moon in light mode, sun in dark mode — CSS-driven so SSR and client agree. */}
       <svg

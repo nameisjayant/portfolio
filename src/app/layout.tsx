@@ -1,18 +1,37 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import {
+  Bricolage_Grotesque,
+  Caveat,
+  DM_Mono,
+  Figtree,
+} from "next/font/google";
 import "./globals.css";
 import { themeInitScript } from "@/lib/theme";
 
-const inter = Inter({
-  variable: "--font-inter",
+const figtree = Figtree({
+  variable: "--font-figtree",
   subsets: ["latin"],
   display: "swap",
 });
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+// Includes the width axis so `font-stretch: 75%` gives the condensed display cut.
+const bricolage = Bricolage_Grotesque({
+  variable: "--font-bricolage",
   subsets: ["latin"],
-  style: ["normal", "italic"],
+  axes: ["wdth"],
+  display: "swap",
+});
+
+const caveat = Caveat({
+  variable: "--font-caveat",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const dmMono = DM_Mono({
+  variable: "--font-dm-mono",
+  subsets: ["latin"],
+  weight: ["400", "500"],
   display: "swap",
 });
 
@@ -35,12 +54,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       data-theme="light"
       suppressHydrationWarning
-      className={`${inter.variable} ${playfair.variable} h-full antialiased`}
+      className={`${figtree.variable} ${bricolage.variable} ${caveat.variable} ${dmMono.variable} h-full antialiased`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
-      <body className="min-h-full flex flex-col bg-cream text-ink font-sans">
+      <body className="min-h-full flex flex-col text-ink font-sans">
         {children}
       </body>
     </html>

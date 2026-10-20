@@ -2,12 +2,12 @@ import { profile } from "@/lib/profile";
 
 export default function Footer() {
   return (
-    <footer className="surface-inverse bg-ink text-cream/70 border-t border-cream/10">
-      <div className="mx-auto max-w-7xl px-5 md:px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
-        <p className="text-sm">
+    <footer className="bg-asphalt text-chalk">
+      <div className="wrap flex flex-col md:flex-row items-center justify-between gap-3 border-t-2 border-dashed border-white/35 py-6 text-sm">
+        <p>
           © {new Date().getFullYear()} {profile.name}. All rights reserved.
         </p>
-        <p className="text-sm font-serif italic">
+        <p className="hand text-2xl text-sun">
           Designed & developed with care.
         </p>
       </div>

@@ -1,4 +1,7 @@
+import type { CSSProperties } from "react";
 import { profile } from "@/lib/profile";
+import CopyEmail from "./CopyEmail";
+import { tint } from "./tints";
 import {
   ArrowUpRight,
   GithubIcon,
@@ -29,81 +32,96 @@ const socialLinks = [
 
 export default function Contact() {
   return (
-    <section id="contact" className="surface-inverse relative py-24 md:py-32 bg-ink text-cream">
-      <div className="mx-auto max-w-7xl px-5 md:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-end">
-          <div className="md:col-span-2">
-            <div className="inline-flex items-center gap-2">
-              <span className="h-px w-8 bg-cream" />
-              <span className="text-xs font-medium uppercase tracking-widest text-cream/70">
-                Let&apos;s work together
-              </span>
-            </div>
-            <h2 className="mt-5 font-black uppercase tracking-tight text-cream leading-[0.9] text-[13vw] md:text-[8vw]">
-              Have an idea?
-              <br />
-              <span className="italic font-serif normal-case tracking-normal text-accent-soft">
-                Let&apos;s build it.
-              </span>
-            </h2>
-          </div>
-
-          <a
-            href={`mailto:${profile.email}`}
-            className="md:justify-self-end group inline-flex items-center gap-3 rounded-full bg-cream text-ink px-7 py-4 text-lg font-medium hover:bg-accent hover:text-cream transition-colors"
+    <section
+      id="contact"
+      className="band band-asphalt mt-14 pt-20 pb-16 md:pt-28 md:pb-24"
+      aria-labelledby="contact-title"
+    >
+      <div className="wrap grid gap-14 md:gap-20">
+        <div className="grid justify-items-center gap-3 text-center">
+          <p className="hand -rotate-2 text-[clamp(1.3rem,1rem+1vw,1.8rem)] text-sun">
+            Let&apos;s work together ↓
+          </p>
+          <h2
+            id="contact-title"
+            className="display text-[clamp(3.4rem,1.6rem+8vw,9rem)] text-chalk [text-shadow:0.05em_0.05em_0_#0f7a4a]"
           >
-            {profile.email}
-            <ArrowUpRight className="h-5 w-5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-          </a>
+            Have an idea?
+            <br />
+            Let&apos;s build it.
+          </h2>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div>
-            <p className="text-xs font-medium uppercase tracking-widest text-cream/60">
-              Elsewhere
-            </p>
-            <div className="mt-6 grid grid-cols-2 gap-3">
-              {socialLinks.map(({ label, href, Icon }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group flex items-center justify-between gap-3 rounded-2xl border border-cream/20 px-5 py-4 hover:border-cream hover:bg-cream hover:text-ink transition-colors"
-                >
-                  <span className="flex items-center gap-3">
-                    <Icon className="h-5 w-5" />
-                    <span className="font-medium">{label}</span>
-                  </span>
-                  <ArrowUpRight className="h-4 w-4 opacity-60 group-hover:opacity-100" />
-                </a>
-              ))}
+        <div className="mx-auto grid w-full max-w-[64rem] grid-cols-1 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)] gap-12 items-start">
+          <div className="postcard grid gap-6 p-7 md:p-10">
+            <div className="postcard-stamp" aria-hidden>
+              <svg viewBox="0 0 40 30" className="w-10" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="9" y="2" width="22" height="26" rx="4" />
+                <path d="M16 6h8M18 24h4" />
+              </svg>
+              <span className="font-mono text-[0.62rem] tracking-[0.1em]">
+                {profile.location.toUpperCase()}
+              </span>
+            </div>
+
+            <p className="hand pr-16 text-3xl text-green">to: you, with an idea</p>
+
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
+              <a
+                href={`mailto:${profile.email}`}
+                className="wavy-link font-extrabold tracking-tight [overflow-wrap:anywhere] text-[clamp(1.3rem,0.9rem+1.8vw,2.1rem)]"
+              >
+                {profile.email}
+              </a>
+              <CopyEmail email={profile.email} />
+            </div>
+
+            <div>
+              <p className="mono-label text-muted">Elsewhere</p>
+              <div className="mt-4 grid grid-cols-2 gap-3">
+                {socialLinks.map(({ label, href, Icon }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="chunky chunky-sm chunky-paper justify-between"
+                  >
+                    <span className="flex items-center gap-2">
+                      <Icon className="h-4 w-4" />
+                      {label}
+                    </span>
+                    <ArrowUpRight className="h-4 w-4" />
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
 
           <div>
-            <p className="text-xs font-medium uppercase tracking-widest text-cream/60">
-              Read my writing
-            </p>
-            <div className="mt-6 space-y-3">
-              {profile.socials.medium.map((m) => (
+            <p className="hand -rotate-2 text-3xl text-sun">read my writing</p>
+            <div className="mt-5 grid gap-6">
+              {profile.socials.medium.map((m, i) => (
                 <a
                   key={m.href}
                   href={m.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="group flex items-center justify-between gap-3 rounded-2xl border border-cream/20 px-5 py-4 hover:border-cream hover:bg-cream hover:text-ink transition-colors"
+                  className={`sticky-note group transition-[rotate] duration-300 hover:rotate-0 ${
+                    i % 2 ? "rotate-2" : "-rotate-2"
+                  }`}
+                  style={{ "--t": tint(i + 1) } as CSSProperties}
                 >
-                  <span className="flex items-center gap-3">
-                    <MediumIcon className="h-5 w-5" />
-                    <span>
-                      <span className="font-medium">Medium — {m.label}</span>
-                      <span className="block text-xs opacity-60 truncate max-w-[220px]">
-                        {m.href.replace(/^https?:\/\//, "")}
-                      </span>
+                  <span className="flex items-center justify-between gap-3">
+                    <span className="flex items-center gap-2 font-display text-lg font-extrabold uppercase [font-stretch:85%]">
+                      <MediumIcon className="h-5 w-5" />
+                      Medium — {m.label}
                     </span>
+                    <ArrowUpRight className="h-4 w-4 shrink-0 opacity-60 group-hover:opacity-100" />
                   </span>
-                  <ArrowUpRight className="h-4 w-4 opacity-60 group-hover:opacity-100" />
+                  <span className="font-mono text-xs opacity-70 truncate">
+                    {m.href.replace(/^https?:\/\//, "")}
+                  </span>
                 </a>
               ))}
             </div>

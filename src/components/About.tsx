@@ -1,3 +1,5 @@
+import type { CSSProperties } from "react";
+import { tint } from "./tints";
 import { SectionHeader } from "./Works";
 
 const stats = [
@@ -28,21 +30,29 @@ const stack = [
 
 export default function About() {
   return (
-    <section id="about" className="relative py-24 md:py-32 bg-cream-soft">
-      <div className="mx-auto max-w-7xl px-5 md:px-8">
-        <SectionHeader
-          eyebrow="About"
-          title={
-            <>
-              Building mobile apps that
-              <br />
-              feel <span className="italic font-serif">effortless</span>.
-            </>
-          }
-        />
+    <section
+      id="about"
+      className="wrap py-24 md:py-32"
+      aria-labelledby="about-title"
+    >
+      <SectionHeader
+        id="about-title"
+        eyebrow="About"
+        title={
+          <>
+            Building mobile apps that
+            <br />
+            feel <mark>effortless</mark>
+          </>
+        }
+      />
 
-        <div className="mt-14 grid grid-cols-1 lg:grid-cols-3 gap-10">
-          <div className="lg:col-span-2 space-y-6 text-lg leading-relaxed text-ink/80">
+      <div className="mt-14 grid grid-cols-1 lg:grid-cols-[minmax(0,1.7fr)_minmax(0,0.75fr)] gap-10 lg:gap-14 items-start">
+        <div className="sheet spiral grid gap-5 rounded-lg px-6 pt-12 pb-9 md:px-10 shadow-[7px_7px_0_var(--ink)] bg-[repeating-linear-gradient(to_bottom,transparent_0_31px,var(--line)_31px_32px)] [background-position:0_14px]">
+          <h3 className="display text-[clamp(2.2rem,1.6rem+2vw,3.2rem)]">
+            A bit about me
+          </h3>
+          <div className="space-y-5 text-lg leading-relaxed text-ink-2">
             <p>
               I&apos;m Jayant — a mobile developer who obsesses over the details
               that make apps feel alive. I&apos;ve spent years working across
@@ -58,39 +68,45 @@ export default function About() {
               When I&apos;m not coding, I&apos;m probably tinkering with a new
               framework, sketching UI ideas, or explaining a tricky concept in
               plain English on{" "}
-              <span className="italic font-serif">Programming Simplified</span>.
+              <span className="hand text-2xl text-green">
+                Programming Simplified
+              </span>
+              .
             </p>
           </div>
 
-          <div className="surface-inverse rounded-3xl bg-ink text-cream p-8">
-            <p className="text-xs uppercase tracking-widest text-cream/60">
-              At a glance
-            </p>
-            <div className="mt-6 grid grid-cols-2 gap-6">
-              {stats.map((s) => (
-                <div key={s.label}>
-                  <div className="font-serif text-4xl">{s.value}</div>
-                  <div className="mt-1 text-xs text-cream/70 leading-relaxed">
-                    {s.label}
-                  </div>
-                </div>
+          <div className="mt-2">
+            <p className="mono-label text-muted">Tech Stack</p>
+            <ul className="tags mt-4 flex flex-wrap gap-2.5" aria-label="Tech stack">
+              {stack.map((s, i) => (
+                <li
+                  key={s}
+                  className="tag"
+                  style={{ "--t": tint(i) } as CSSProperties}
+                >
+                  {s}
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </div>
 
-        <div className="mt-16">
-          <p className="text-xs font-medium uppercase tracking-widest text-ink/60">
-            Tech Stack
-          </p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            {stack.map((s) => (
-              <span
-                key={s}
-                className="inline-flex items-center rounded-full border border-ink/20 bg-cream px-4 py-2 text-sm font-medium text-ink/80 hover:border-ink hover:bg-surface transition-colors"
+        <div>
+          <p className="hand -rotate-2 text-3xl">at a glance</p>
+          <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
+            {stats.map((s, i) => (
+              <p
+                key={s.label}
+                className={`sticky-note ${
+                  ["rotate-3", "-rotate-2", "rotate-2", "-rotate-3"][i % 4]
+                }`}
+                style={{ "--t": tint(i) } as CSSProperties}
               >
-                {s}
-              </span>
+                <b className="display text-[clamp(2.2rem,1.6rem+1.6vw,2.8rem)]">
+                  {s.value}
+                </b>
+                <span className="text-[0.95rem] leading-snug">{s.label}</span>
+              </p>
             ))}
           </div>
         </div>
